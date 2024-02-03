@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Population Clock</title>
+<style>
+    #population {
+        font-size: 24px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <h1>Population Clock</h1>
+    <p>Current Population: <span id="population">85,000,000</span></p>
+
+    <script>
+        // Set initial population and increment value
+        let population = 85000000; // Starting population (85 million)
+        const increment = 1; // Increment value (increase by 1 every 15 seconds)
+
+        // Function to update population
+        function updatePopulation() {
+            population += increment;
+            document.getElementById("population").textContent = population.toLocaleString();
+        }
+
+        // Update population every 15 seconds
+        setInterval(updatePopulation, 15000); // 15000 milliseconds = 15 seconds
+    </script>
+</body>
+</html>
